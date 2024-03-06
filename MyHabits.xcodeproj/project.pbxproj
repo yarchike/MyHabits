@@ -13,6 +13,9 @@
 		BF45DB202B98686000C7F264 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF45DB1E2B98686000C7F264 /* Main.storyboard */; };
 		BF45DB222B98686C00C7F264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF45DB212B98686C00C7F264 /* Assets.xcassets */; };
 		BF45DB252B98686C00C7F264 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF45DB232B98686C00C7F264 /* LaunchScreen.storyboard */; };
+		BF45DB2D2B98695A00C7F264 /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF45DB2C2B98695A00C7F264 /* HabitsStore.swift */; };
+		BF45DB2F2B986A7900C7F264 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF45DB2E2B986A7900C7F264 /* HabitsViewController.swift */; };
+		BF45DB332B986B0800C7F264 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF45DB322B986B0800C7F264 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		BF45DB212B98686C00C7F264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF45DB242B98686C00C7F264 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF45DB262B98686C00C7F264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF45DB2C2B98695A00C7F264 /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
+		BF45DB2E2B986A7900C7F264 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		BF45DB322B986B0800C7F264 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		BF45DB172B98685F00C7F264 /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				BF45DB312B986ACB00C7F264 /* info */,
+				BF45DB302B986A9200C7F264 /* habit */,
 				BF45DB182B98685F00C7F264 /* AppDelegate.swift */,
 				BF45DB1A2B98685F00C7F264 /* SceneDelegate.swift */,
 				BF45DB1C2B98685F00C7F264 /* ViewController.swift */,
@@ -63,8 +71,25 @@
 				BF45DB212B98686C00C7F264 /* Assets.xcassets */,
 				BF45DB232B98686C00C7F264 /* LaunchScreen.storyboard */,
 				BF45DB262B98686C00C7F264 /* Info.plist */,
+				BF45DB2C2B98695A00C7F264 /* HabitsStore.swift */,
 			);
 			path = MyHabits;
+			sourceTree = "<group>";
+		};
+		BF45DB302B986A9200C7F264 /* habit */ = {
+			isa = PBXGroup;
+			children = (
+				BF45DB2E2B986A7900C7F264 /* HabitsViewController.swift */,
+			);
+			path = habit;
+			sourceTree = "<group>";
+		};
+		BF45DB312B986ACB00C7F264 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				BF45DB322B986B0800C7F264 /* InfoViewController.swift */,
+			);
+			path = info;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +165,9 @@
 			files = (
 				BF45DB1D2B98685F00C7F264 /* ViewController.swift in Sources */,
 				BF45DB192B98685F00C7F264 /* AppDelegate.swift in Sources */,
+				BF45DB2D2B98695A00C7F264 /* HabitsStore.swift in Sources */,
+				BF45DB2F2B986A7900C7F264 /* HabitsViewController.swift in Sources */,
+				BF45DB332B986B0800C7F264 /* InfoViewController.swift in Sources */,
 				BF45DB1B2B98685F00C7F264 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +328,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +336,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.martynov.MyHabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -328,6 +360,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,6 +368,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.martynov.MyHabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
