@@ -9,6 +9,25 @@ import UIKit
 
 class HabitsViewController: UIViewController {
     
+    
+    private let collectionView: UICollectionView = {
+        let viewLayout = UICollectionViewFlowLayout()
+        
+        let collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: viewLayout
+        )
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+//        collectionView.register(
+//            PhotosCollectionViewCell.self,
+//            forCellWithReuseIdentifier: PhotosCollectionViewCell.identifier
+//        )
+        
+        return collectionView
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +43,9 @@ class HabitsViewController: UIViewController {
     }
     
     @objc func buttonPressed() {
+        let habitViewController = HabitViewController()
+        self.navigationController?.pushViewController(habitViewController, animated: true)
+        
     }
     
     
