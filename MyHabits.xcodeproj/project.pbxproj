@@ -19,6 +19,9 @@
 		BF45DB352B98A63A00C7F264 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF45DB342B98A63A00C7F264 /* HabitViewController.swift */; };
 		BF45DB382B98BD5600C7F264 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF45DB372B98BD5600C7F264 /* ProgressCollectionViewCell.swift */; };
 		BF45DB3A2B98BD6700C7F264 /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF45DB392B98BD6700C7F264 /* HabitCollectionViewCell.swift */; };
+		BFB2667D2B9DC398003AEFF0 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB2667C2B9DC398003AEFF0 /* Font.swift */; };
+		BFCA1B932B99B94D00F1E8AF /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA1B922B99B94D00F1E8AF /* ReusableView.swift */; };
+		BFD573C42B9DC55D00FE21EC /* HabitCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD573C32B9DC55D00FE21EC /* HabitCollectionViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		BF45DB342B98A63A00C7F264 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		BF45DB372B98BD5600C7F264 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF45DB392B98BD6700C7F264 /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
+		BFB2667C2B9DC398003AEFF0 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		BFCA1B922B99B94D00F1E8AF /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		BFD573C32B9DC55D00FE21EC /* HabitCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,8 @@
 		BF45DB172B98685F00C7F264 /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				BFB2667B2B9C85FA003AEFF0 /* Util */,
+				BFCA1B902B99B91B00F1E8AF /* UiView */,
 				BF45DB312B986ACB00C7F264 /* info */,
 				BF45DB302B986A9200C7F264 /* habit */,
 				BF45DB182B98685F00C7F264 /* AppDelegate.swift */,
@@ -105,8 +113,33 @@
 			children = (
 				BF45DB372B98BD5600C7F264 /* ProgressCollectionViewCell.swift */,
 				BF45DB392B98BD6700C7F264 /* HabitCollectionViewCell.swift */,
+				BFD573C32B9DC55D00FE21EC /* HabitCollectionViewHeader.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		BFB2667B2B9C85FA003AEFF0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BFB2667C2B9DC398003AEFF0 /* Font.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		BFCA1B902B99B91B00F1E8AF /* UiView */ = {
+			isa = PBXGroup;
+			children = (
+				BFCA1B912B99B92C00F1E8AF /* Common */,
+			);
+			path = UiView;
+			sourceTree = "<group>";
+		};
+		BFCA1B912B99B92C00F1E8AF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BFCA1B922B99B94D00F1E8AF /* ReusableView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +214,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF45DB1D2B98685F00C7F264 /* ViewController.swift in Sources */,
+				BFB2667D2B9DC398003AEFF0 /* Font.swift in Sources */,
+				BFCA1B932B99B94D00F1E8AF /* ReusableView.swift in Sources */,
 				BF45DB192B98685F00C7F264 /* AppDelegate.swift in Sources */,
 				BF45DB3A2B98BD6700C7F264 /* HabitCollectionViewCell.swift in Sources */,
 				BF45DB352B98A63A00C7F264 /* HabitViewController.swift in Sources */,
+				BFD573C42B9DC55D00FE21EC /* HabitCollectionViewHeader.swift in Sources */,
 				BF45DB2D2B98695A00C7F264 /* HabitsStore.swift in Sources */,
 				BF45DB2F2B986A7900C7F264 /* HabitsViewController.swift in Sources */,
 				BF45DB332B986B0800C7F264 /* InfoViewController.swift in Sources */,
