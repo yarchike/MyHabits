@@ -28,7 +28,6 @@ class HabitsViewController: UIViewController {
             forCellWithReuseIdentifier: HabitCollectionViewCell.identifier
         )
         collectionView.register(HabitCollectionViewHeader.self, forSupplementaryViewOfKind:  UICollectionView.elementKindSectionHeader, withReuseIdentifier: HabitCollectionViewHeader.identifier)
-        
         return collectionView
     }()
     
@@ -84,7 +83,6 @@ extension HabitsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(indexPath.row == 0){
-            print(indexPath.section)
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: ProgressCollectionViewCell.identifier,
                 for: indexPath) as! ProgressCollectionViewCell
@@ -94,6 +92,7 @@ extension HabitsViewController: UICollectionViewDataSource {
             
             return cell
         }
+        
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: HabitCollectionViewCell.identifier,
             for: indexPath) as! HabitCollectionViewCell
@@ -105,6 +104,7 @@ extension HabitsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        print("Header")
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
             withReuseIdentifier: HabitCollectionViewHeader.identifier,
             for: indexPath) as! HabitCollectionViewHeader

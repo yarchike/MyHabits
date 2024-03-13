@@ -11,6 +11,7 @@ class HabitViewController: UIViewController {
     
     private var name = ""
     private var color = UIColor.orange
+    private var date = Date()
     
     let nameLabelView: UILabel = {
         let labelView = UILabel()
@@ -71,9 +72,32 @@ class HabitViewController: UIViewController {
         return labelView
     }()
     
-    let timePickerView: UIPickerView = {
-        let picker = UIPickerView()
+    let everyDay: UILabel = {
+        let labelView = UILabel()
+        labelView.text = "Каждый день в "
+        labelView.font = labelView.font.withSize(17)
+        labelView.textColor = .black
+        labelView.numberOfLines = 1
+        labelView.translatesAutoresizingMaskIntoConstraints = false
+        return labelView
+    }()
+    
+    let inputTimeLabel: UILabel = {
+        let labelView = UILabel()
+        labelView.text = "11:00 PM"
+        labelView.font = labelView.font.withSize(17)
+        labelView.textColor = UIColor(named: "AccentColor")
+        labelView.numberOfLines = 1
+        labelView.translatesAutoresizingMaskIntoConstraints = false
+        return labelView
+    }()
+    
+    private lazy var timePickerView: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .time
+        picker.preferredDatePickerStyle  = .wheels
         picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
         return picker
     }()
     
@@ -94,6 +118,10 @@ class HabitViewController: UIViewController {
         let leftNavigateButton = UIBarButtonItem(title: "Отменить", style: .plain, target: self, action: #selector(leftButtonPressed))
         self.navigationItem.rightBarButtonItem = rightNavigateButton
         self.navigationItem.leftBarButtonItem = leftNavigateButton
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "h:mm a"
+        inputTimeLabel.text = timeFormatter.string(from: timePickerView.date)
     }
     
     private func addSubviews() {
@@ -101,6 +129,8 @@ class HabitViewController: UIViewController {
         view.addSubview(nameView)
         view.addSubview(colorLabeView)
         view.addSubview(colorView)
+        view.addSubview(everyDay)
+        view.addSubview(inputTimeLabel)
         view.addSubview(timePickerView)
         
     }
@@ -126,9 +156,14 @@ class HabitViewController: UIViewController {
             colorView.widthAnchor.constraint(equalToConstant: 30),
             colorView.heightAnchor.constraint(equalToConstant: 30),
             
-            timePickerView.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor),
-            timePickerView.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor),
-            timePickerView.topAnchor.constraint(equalTo: colorView.bottomAnchor, constant: 16)
+            everyDay.topAnchor.constraint(equalTo: colorView.bottomAnchor, constant: 8),
+            everyDay.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 16),
+            
+            inputTimeLabel.topAnchor.constraint(equalTo: colorView.bottomAnchor, constant: 8),
+            inputTimeLabel.leadingAnchor.constraint(equalTo: everyDay.trailingAnchor),
+            
+            timePickerView.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
+            timePickerView.topAnchor.constraint(equalTo: everyDay.bottomAnchor, constant: 16)
             
         ])
     }
@@ -136,7 +171,7 @@ class HabitViewController: UIViewController {
     
     @objc func rightButtonPressed() {
         let newHabit = Habit(name: name,
-                             date: Date(),
+                             date:date,
                              color: self.color)
         let store = HabitsStore.shared
         store.habits.append(newHabit)
@@ -158,6 +193,15 @@ class HabitViewController: UIViewController {
     @objc private func tapColor(gesture: UIGestureRecognizer) {
         presentColorPicker()
     }
+    
+    @objc func handleDatePicker(_ datePicker: UIDatePicker) {
+        date =  datePicker.date
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "h:mm a"
+        inputTimeLabel.text = timeFormatter.string(from: datePicker.date)
+    }
+    
+
     
     func presentColorPicker() {
         let colorPicker = UIColorPickerViewController()
